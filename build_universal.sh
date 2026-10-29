@@ -42,7 +42,7 @@ ${CROSS_COMPILE}readelf -h $BIN >> $REPORT
 
 echo -e "\n## 2. ldd" >> $REPORT
 if [ -z "$CROSS_COMPILE" ]; then
-    ldd ./$BIN >> $REPORT 2>&1
+    ldd ./$BIN >> $REPORT 2>&1 || true
 else
     echo "ldd unavailable for cross compilation" >> $REPORT
 fi
